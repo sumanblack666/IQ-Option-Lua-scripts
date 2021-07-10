@@ -1,4 +1,4 @@
-instrument { name = "Strategy MACD vs BB", overlay = false, icon="indicators:ATR" }
+instrument { name = "MACD vs BB Indicator", overlay = false, icon="indicators:ATR" }
 
 fast_length = 8
 slow_length = 21
@@ -31,5 +31,8 @@ sell = macd[1] > upper[1] and macd < upper
 fill (macd, lower, "", iff( macd<lower,'green',na))
 fill (macd, upper, "", iff( macd>upper,'red',na))
 
-plot_shape(buy, "long", shape_style.triangleup, shape_size.large, 'green', shape_location.belowbar,0,'BUY', 'green')
-plot_shape(sell, "short", shape_style.triangledown, shape_size.large, 'red', shape_location.abovebar,0,'SELL', 'red')
+fill_area {
+    first = 0.01,
+    second = -0.01,
+    color = rgba(255,255,255,0.05)
+}
