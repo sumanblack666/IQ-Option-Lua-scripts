@@ -1,3 +1,5 @@
+--Indicator using Keltner Channel and Stochastic for Built in IQ Option Script
+
 instrument { name = "KC Suman", overlay = true }
 period = input (20, "front.period", input.integer, 1)
 shift =  input (2.5,  "front.newind.offset", input.double, 0.01, 300, 0.01)
